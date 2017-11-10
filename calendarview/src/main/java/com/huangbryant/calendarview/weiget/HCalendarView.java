@@ -88,6 +88,8 @@ public class HCalendarView extends ViewPager {
                 mAttrsBean.setChooseType(ta.getInt(attr, 0));
             } else if (attr == R.styleable.HCalendarView_onlyShow) {
                 mAttrsBean.setOnlyShow(ta.getBoolean(attr, false));
+            } else if (attr == R.styleable.HCalendarView_today_bg) {
+                mAttrsBean.setToayBg(ta.getResourceId(attr, mAttrsBean.getToayBg()));
             }
         }
 
@@ -253,7 +255,7 @@ public class HCalendarView extends ViewPager {
     /**
      * 设置自定义日期样式
      *
-     * @param item_layout         自定义的日期item布局
+     * @param item_layout          自定义的日期item布局
      * @param HCalendarViewAdapter 解析item的接口
      */
     public HCalendarView setOnCalendarViewAdapter(int item_layout, HCalendarViewAdapter HCalendarViewAdapter) {
@@ -301,16 +303,18 @@ public class HCalendarView extends ViewPager {
      * 跳转到下个月
      */
     public void nextMonth() {
-        if (currentPosition < count - 1)
+        if (currentPosition < count - 1) {
             setCurrentItem(++currentPosition, false);
+        }
     }
 
     /**
      * 跳转到上个月
      */
     public void lastMonth() {
-        if (currentPosition > 0)
+        if (currentPosition > 0) {
             setCurrentItem(--currentPosition, false);
+        }
     }
 
     /**
