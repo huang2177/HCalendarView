@@ -9,28 +9,110 @@ import java.util.Map;
 
 public class AttrsBean {
 
-    private int[] startDate;//日历的开始年、月
-    private int[] endDate;//日历的结束年、月
-    private int[] singleDate;//单选是默认选中的日期（年、月、日）
-    private List<int[]> multiDates;//多选时默认选中的日期集合
-    private int[] disableStartDate;//单选时默认选中的年、月、日disableStar
-    private int[] disableEndDate;//单选时默认选中的年、月、日
-    private boolean showLastNext = true;//是否显示上个月、下个月
-    private boolean showLunar = true;//是否显示农历
-    private boolean showHoliday = true;//是否显示节假日(不显示农历则节假日无法显示，节假日会覆盖农历显示)
-    private boolean showTerm = true;//是否显示节气
-    private boolean switchChoose = true;//单选时切换月份，是否选中上次的日期
+    /**
+     * 日历的开始年、月
+     */
+    private int[] startDate;
+    /**
+     * 日历的结束年、月
+     */
+    private int[] endDate;
+    /**
+     * 单选是默认选中的日期（年、月、日）
+     */
+    private int[] singleDate;
+    /**
+     * 多选时默认选中的日期集合
+     */
+    private List<int[]> multiDates;
+    /**
+     * 单选时默认选中的年、月、日disableStar
+     */
+    private int[] disableStartDate;
+    /**
+     * 单选时默认选中的年、月、日
+     */
+    private int[] disableEndDate;
+    /**
+     * 是否显示上个月、下个月
+     */
+    private boolean showLastNext = true;
+    /**
+     * 是否显示农历
+     */
+    private boolean showLunar = true;
+    /**
+     * 是否显示节假日(不显示农历则节假日无法显示，节假日会覆盖农历显示)
+     */
+    private boolean showHoliday = true;
+    /**
+     * 是否显示节气
+     */
+    private boolean showTerm = true;
+    /**
+     * 单选时切换月份，是否选中上次的日期
+     */
+    private boolean switchChoose = true;
+    /**
+     * 阳历的日期颜色
+     */
+    private int colorSolar = Color.BLACK;
+    /**
+     * 阴历的日期颜色
+     */
+    private int colorLunar = Color.parseColor("#999999");
+    /**
+     * 节假日的颜色
+     */
+    private int colorHoliday = Color.parseColor("#EC9729");
+    /**
+     * 选中的日期文字颜色
+     */
+    private int colorChoose = Color.WHITE;
+    /**
+     * 阳历日期文字尺寸
+     */
+    private int sizeSolar = 14;
 
-    private int colorSolar = Color.BLACK;//阳历的日期颜色
-    private int colorLunar = Color.parseColor("#999999");//阴历的日期颜色
-    private int colorHoliday = Color.parseColor("#EC9729");//节假日的颜色
-    private int colorChoose = Color.WHITE;//选中的日期文字颜色
-    private int sizeSolar = 14;//阳历日期文字尺寸
-    private int sizeLunar = 8;//阴历日期文字尺寸
-    private int dayBg = R.drawable.blue_circle;//选中的背景
-    private Map<String, String> specifyMap;//指定日期对应的文字map
-    private int chooseType = 0;//表示日历是单选还是多选
+    /**
+     * 阴历日期文字尺寸
+     */
+    private int sizeLunar = 8;
+
+    /**
+     * 选中的背景
+     */
+    private int dayBg = R.drawable.blue_circle;
+
+    /**
+     * 当天日期的背景
+     */
+    private int toayBg = R.drawable.blue_circle;
+
+    /**
+     * 指定日期对应的文字map
+     */
+    private Map<String, String> specifyMap;
+
+    /**
+     * 表示日历是单选还是多选
+     */
+    private int chooseType = 0;
+
+    /**
+     * 是否只是展示（不可选择）
+     */
     private boolean onlyShow;
+
+
+
+    public void setToayBg(int toayBg) {
+        this.toayBg = toayBg;
+    }
+
+    public int getToayBg() {
+        return toayBg;
+    }
 
     public void setOnlyShow(boolean onlyShow) {
         this.onlyShow = onlyShow;

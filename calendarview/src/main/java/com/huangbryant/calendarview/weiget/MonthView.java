@@ -244,8 +244,8 @@ public class MonthView extends ViewGroup {
             }
 
             if (date.isToday()) {
-                solarDay.setTextColor(Color.WHITE);
-                view.setBackgroundColor(Color.RED);
+                solarDay.setTextColor(mAttrsBean.getColorChoose());
+                view.setBackgroundResource(mAttrsBean.getToayBg());
             }
             addView(view, i);
         }

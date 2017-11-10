@@ -41,7 +41,8 @@
 
     <com.huangbryant.calendarview.weiget.WeekView
         android:layout_width="match_parent"
-        android:layout_height="35dp" />
+        android:layout_height="35dp"
+        calendarview:week_size="14" />
 
     <com.huangbryant.calendarview.weiget.HCalendarView
         android:id="@+id/calendar"
